@@ -1,0 +1,2493 @@
+{
+	"info": {
+		"_postman_id": "369516f6-f2a0-41a4-885d-09aee8482e7f",
+		"name": "Nisotak",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PRD",
+			"item": [
+				{
+					"name": "Access Control",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"email@email.com\",\n    \"password\": \"plaintext password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/accessControlService/login",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"accessControlService",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDEyOTMxNTEsImV4cCI6MTYwMTMwMDM1MX0.oXQMERMuYPNefWJy1F0p026dBrYdC-7BAVWY54HPU0Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"any\",\r\n    \"email\": \"email@email.com\",\r\n    \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/accessControlService/register",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"accessControlService",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test integration",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzQ2FtYXJnbyIsImVtYWlsIjoibHVjYXNjYW1hcmdvNzU1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYwNjY2NzIyNSwiZXhwIjoxNjA2Njc0NDI1fQ.Xn9s2TioJSxYwANSGovWRLFEcSwcKtyKa3Cmki5ABaQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/accessControlService/verify-jwt-integration",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"accessControlService",
+										"verify-jwt-integration"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Content Pages: Pages",
+					"item": [
+						{
+							"name": "Get All Pages",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDEyOTMxNTEsImV4cCI6MTYwMTMwMDM1MX0.oXQMERMuYPNefWJy1F0p026dBrYdC-7BAVWY54HPU0Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "username",
+										"value": "lucas",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "lucas_token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/contentPageService/",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"contentPageService",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Page by ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDEyOTMxNTEsImV4cCI6MTYwMTMwMDM1MX0.oXQMERMuYPNefWJy1F0p026dBrYdC-7BAVWY54HPU0Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "username",
+										"type": "text",
+										"value": "lucas"
+									},
+									{
+										"key": "token",
+										"type": "text",
+										"value": "lucas_token"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/contentPageService/5e7501d84a3cf01d118e1143",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"contentPageService",
+										"5e7501d84a3cf01d118e1143"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change author",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDEyOTMxNTEsImV4cCI6MTYwMTMwMDM1MX0.oXQMERMuYPNefWJy1F0p026dBrYdC-7BAVWY54HPU0Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "username",
+										"type": "text",
+										"value": "lucas"
+									},
+									{
+										"key": "token",
+										"type": "text",
+										"value": "lucas_token"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"author\": \"author-email\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/contentPageService/temporary/internal/updateAuthor/5e7501d84a3cf01d118e1143",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"contentPageService",
+										"temporary",
+										"internal",
+										"updateAuthor",
+										"5e7501d84a3cf01d118e1143"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Content Pages: Text",
+					"item": [
+						{
+							"name": "Get All Text",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDEyOTMxNTEsImV4cCI6MTYwMTMwMDM1MX0.oXQMERMuYPNefWJy1F0p026dBrYdC-7BAVWY54HPU0Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"lucas\",\n    \"token\": \"lucas_token\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/textContentService/",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"textContentService",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Text by ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDEyOTMxNTEsImV4cCI6MTYwMTMwMDM1MX0.oXQMERMuYPNefWJy1F0p026dBrYdC-7BAVWY54HPU0Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "username",
+										"value": "lucas",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "lucas_token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/textContentService/5e7501fb66fc091f24c47760",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"textContentService",
+										"5e7501fb66fc091f24c47760"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change author",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDEyOTMxNTEsImV4cCI6MTYwMTMwMDM1MX0.oXQMERMuYPNefWJy1F0p026dBrYdC-7BAVWY54HPU0Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "username",
+										"type": "text",
+										"value": "lucas"
+									},
+									{
+										"key": "token",
+										"type": "text",
+										"value": "lucas_token"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"author\": \"author-email\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/textContentService/temporary/internal/updateAuthor/5e7501d84a3cf01d118e1143",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"textContentService",
+										"temporary",
+										"internal",
+										"updateAuthor",
+										"5e7501d84a3cf01d118e1143"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Content Pages: Phrases",
+					"item": [
+						{
+							"name": "Get All Phrases",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDEyOTMxNTEsImV4cCI6MTYwMTMwMDM1MX0.oXQMERMuYPNefWJy1F0p026dBrYdC-7BAVWY54HPU0Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"lucas\",\n    \"token\": \"lucas_token\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/phraseService/",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"phraseService",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Phrase by ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDEyOTMxNTEsImV4cCI6MTYwMTMwMDM1MX0.oXQMERMuYPNefWJy1F0p026dBrYdC-7BAVWY54HPU0Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "username",
+										"value": "lucas",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "lucas_token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/phraseService/5e75021c15a9511e726b7b0d",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"phraseService",
+										"5e75021c15a9511e726b7b0d"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change author",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDEyOTMxNTEsImV4cCI6MTYwMTMwMDM1MX0.oXQMERMuYPNefWJy1F0p026dBrYdC-7BAVWY54HPU0Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "username",
+										"type": "text",
+										"value": "lucas"
+									},
+									{
+										"key": "token",
+										"type": "text",
+										"value": "lucas_token"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"author\": \"author-email\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/phraseService/temporary/internal/updateAuthor/5e7501d84a3cf01d118e1143",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"phraseService",
+										"temporary",
+										"internal",
+										"updateAuthor",
+										"5e7501d84a3cf01d118e1143"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "MC Question",
+					"item": [
+						{
+							"name": "Get All MC Questions",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDEyOTMxNTEsImV4cCI6MTYwMTMwMDM1MX0.oXQMERMuYPNefWJy1F0p026dBrYdC-7BAVWY54HPU0Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "username",
+										"value": "lucas",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "lucas_token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/mcQuestionService",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"mcQuestionService"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get MC Question by ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDEyOTMxNTEsImV4cCI6MTYwMTMwMDM1MX0.oXQMERMuYPNefWJy1F0p026dBrYdC-7BAVWY54HPU0Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "username",
+										"value": "lucas",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "lucas_token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/mcQuestionService/5e750ac10408ff1c2a4ebd19",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"mcQuestionService",
+										"5e750ac10408ff1c2a4ebd19"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change author",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDEyOTMxNTEsImV4cCI6MTYwMTMwMDM1MX0.oXQMERMuYPNefWJy1F0p026dBrYdC-7BAVWY54HPU0Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "username",
+										"type": "text",
+										"value": "lucas"
+									},
+									{
+										"key": "token",
+										"type": "text",
+										"value": "lucas_token"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"author\": \"author-email\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/mcQuestionService/temporary/internal/updateAuthor/5e7501d84a3cf01d118e1143",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"mcQuestionService",
+										"temporary",
+										"internal",
+										"updateAuthor",
+										"5e7501d84a3cf01d118e1143"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Lesson",
+					"item": [
+						{
+							"name": "Get All Lessons",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzQ2FtYXJnbyIsImVtYWlsIjoibHVjYXNjYW1hcmdvNzU1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYwMzAzMTE4MywiZXhwIjoxNjAzMDM4MzgzfQ.6D0tXtx2J1oIQfdWpCD0jM6ziAFsgn8NYIfSmcIUp0g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "username",
+										"value": "lucas",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "lucas_token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/lessonService?limit=1&offset=1",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"lessonService"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1"
+										},
+										{
+											"key": "offset",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Lesson by ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDEyOTMxNTEsImV4cCI6MTYwMTMwMDM1MX0.oXQMERMuYPNefWJy1F0p026dBrYdC-7BAVWY54HPU0Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "username",
+										"value": "lucas",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "lucas_token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/lessonService/5e74f8d8e542901b9b77a353",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"lessonService",
+										"5e74f8d8e542901b9b77a353"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Lesson Audio",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDEyOTMxNTEsImV4cCI6MTYwMTMwMDM1MX0.oXQMERMuYPNefWJy1F0p026dBrYdC-7BAVWY54HPU0Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "username",
+										"type": "text",
+										"value": "lucas"
+									},
+									{
+										"key": "token",
+										"type": "text",
+										"value": "lucas_token"
+									}
+								],
+								"url": {
+									"raw": "https://nisotak.usask.ca/lessonService/media/audio/5f04e43a3d972c162ded0b0c",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"lessonService",
+										"media",
+										"audio",
+										"5f04e43a3d972c162ded0b0c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change author",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDEyOTMxNTEsImV4cCI6MTYwMTMwMDM1MX0.oXQMERMuYPNefWJy1F0p026dBrYdC-7BAVWY54HPU0Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "username",
+										"type": "text",
+										"value": "lucas"
+									},
+									{
+										"key": "token",
+										"type": "text",
+										"value": "lucas_token"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"author\": \"author-email\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/lessonService/temporary/internal/updateAuthor/5e7501d84a3cf01d118e1143",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"lessonService",
+										"temporary",
+										"internal",
+										"updateAuthor",
+										"5e7501d84a3cf01d118e1143"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search lesson",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzQ2FtYXJnbyIsImVtYWlsIjoibHVjYXNjYW1hcmdvNzU1QGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYwNjY2NzIyNSwiZXhwIjoxNjA2Njc0NDI1fQ.Xn9s2TioJSxYwANSGovWRLFEcSwcKtyKa3Cmki5ABaQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "username",
+										"type": "text",
+										"value": "lucas",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"type": "text",
+										"value": "lucas_token",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://nisotak.usask.ca/lessonService/search?limit=2&offset=1&dialect=navajo&term=good",
+									"protocol": "https",
+									"host": [
+										"nisotak",
+										"usask",
+										"ca"
+									],
+									"path": [
+										"lessonService",
+										"search"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "2"
+										},
+										{
+											"key": "offset",
+											"value": "1"
+										},
+										{
+											"key": "dialect",
+											"value": "navajo"
+										},
+										{
+											"key": "term",
+											"value": "good"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "DEV",
+			"item": [
+				{
+					"name": "Access Control",
+					"item": [
+						{
+							"name": "Register User",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"anyString\",\n    \"email\": \"email@email.com\",\n    \"password\": \"plaintext password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/accessControlService/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"accessControlService",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"email@email.com\",\n    \"password\": \"plaintext password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/accessControlService/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"accessControlService",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Test integration",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDU0NTQ5ODksImV4cCI6MTYwNTQ2MjE4OX0.ojyebGW8Adjfm_UCX-O1UBvMwm1DzOIT8wKt4eU3n9g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/accessControlService/verify-jwt-integration",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"accessControlService",
+										"verify-jwt-integration"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DEBUG: Get all Users",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/accessHelper/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"accessHelper",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get inactive users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDU0NjA1MzgsImV4cCI6MTYwNTQ2NzczOH0.28rbW8gMdGkxGFm9acLbUMjQf48JnWx35kl6NUzV22M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/accessControlService/users/inactive",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"accessControlService",
+										"users",
+										"inactive"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get active users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDU0NjA1MzgsImV4cCI6MTYwNTQ2NzczOH0.28rbW8gMdGkxGFm9acLbUMjQf48JnWx35kl6NUzV22M",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/accessControlService/users/active",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"accessControlService",
+										"users",
+										"active"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get denied users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1OTk4MjYwOTksImV4cCI6MTU5OTgzMzI5OX0.Zl6OwDWKXmDgae_vthZzEuxYmdKeUzhZikPb2bZzPn4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/accessControlService/users/denied",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"accessControlService",
+										"users",
+										"denied"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete user",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDAwODcyMDIsImV4cCI6MTYwMDA5NDQwMn0.e4HmGEsUm4glnJeWcrs2zNE-QeJfKnAoZHsv_OY1qrs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test5@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/accessControlService/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"accessControlService",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update user role",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDU0NTgxMTIsImV4cCI6MTYwNTQ2NTMxMn0.ShBpYG0lnGv-tTQppHoLkLYp-L2kh30OHnj3WG98yp4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"onlyRead@gmail.com\",\r\n    \"role\": \"ReadOnly\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/accessControlService/user/updateRole",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"accessControlService",
+										"user",
+										"updateRole"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Content Pages: Pages",
+					"item": [
+						{
+							"name": "Get All Pages",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "username",
+										"value": "lucas",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "lucas_token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5002/contentPageService/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5002",
+									"path": [
+										"contentPageService",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Page by ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "username",
+										"type": "text",
+										"value": "lucas"
+									},
+									{
+										"key": "token",
+										"type": "text",
+										"value": "lucas_token"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5002/contentPageService/5e7501d84a3cf01d118e1143",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5002",
+									"path": [
+										"contentPageService",
+										"5e7501d84a3cf01d118e1143"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Content Pages: Text",
+					"item": [
+						{
+							"name": "Get All Text",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"lucas\",\n    \"token\": \"lucas_token\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5004/textContentService/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5004",
+									"path": [
+										"textContentService",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Text by ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "username",
+										"value": "lucas",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "lucas_token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5004/textContentService/5e7501fb66fc091f24c47760",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5004",
+									"path": [
+										"textContentService",
+										"5e7501fb66fc091f24c47760"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post file",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "media",
+											"type": "file",
+											"src": "/C:/Users/madmuc lab/Downloads/description-nimiyweyihten-ka.mp3"
+										},
+										{
+											"key": "username",
+											"value": "lucasHash",
+											"type": "text"
+										},
+										{
+											"key": "token",
+											"value": "lucasHash_token",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:5004/textContentService/test/media/5f07615f615e56124c9c5412",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5004",
+									"path": [
+										"textContentService",
+										"test",
+										"media",
+										"5f07615f615e56124c9c5412"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Content Pages: Phrases",
+					"item": [
+						{
+							"name": "Get All Phrases",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"lucas\",\n    \"token\": \"lucas_token\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5003/phraseService/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5003",
+									"path": [
+										"phraseService",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Phrase by ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "username",
+										"value": "lucas",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "lucas_token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5003/phraseService/5e75021c15a9511e726b7b0d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5003",
+									"path": [
+										"phraseService",
+										"5e75021c15a9511e726b7b0d"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "MC Question",
+					"item": [
+						{
+							"name": "Get All MC Questions",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDQ2NzAwMDAsImV4cCI6MTYwNDY3NzIwMH0.gObK1MBBT9VqV4FvdiWwAw3s1lV-Miy7l9euKMrU7Us",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "username",
+										"value": "lucas",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "lucas_token",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5005/mcQuestionService",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5005",
+									"path": [
+										"mcQuestionService"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get MC Question by ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDAwODcyMDIsImV4cCI6MTYwMDA5NDQwMn0.e4HmGEsUm4glnJeWcrs2zNE-QeJfKnAoZHsv_OY1qrs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "username",
+										"value": "lucas",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "token",
+										"value": "lucas_token",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5005/mcQuestionService/5f5f6f8b8cf9d51d9c33f0b3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5005",
+									"path": [
+										"mcQuestionService",
+										"5f5f6f8b8cf9d51d9c33f0b3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update MCQuestion",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5ld1VzZXJORVdORVciLCJlbWFpbCI6Im5ld05FV05FV0B1c2VyLmNvbSIsImlhdCI6MTU5Nzc1MjI2NiwiZXhwIjoxNTk3NzU5NDY2fQ.hy7jBUJArUu7moZ6OzJuzPWsewyaq3pUI33STJZadLM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "audio",
+											"type": "file",
+											"src": "/C:/Users/madmuc lab/Downloads/description-nimiyweyihten-ka.mp3"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:5005/mcQuestionService/update/5f3a859bc5a16c2eacefe604",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5005",
+									"path": [
+										"mcQuestionService",
+										"update",
+										"5f3a859bc5a16c2eacefe604"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create MCQuestion",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDAwODcyMDIsImV4cCI6MTYwMDA5NDQwMn0.e4HmGEsUm4glnJeWcrs2zNE-QeJfKnAoZHsv_OY1qrs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"lesson_id\": \"5f5f6dfe2ec8301a9c819a5d\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5005/mcQuestionService/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5005",
+									"path": [
+										"mcQuestionService",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete MCQuestion",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5ld1VzZXJORVdORVciLCJlbWFpbCI6Im5ld05FV05FV0B1c2VyLmNvbSIsImlhdCI6MTU5Nzc1MjI2NiwiZXhwIjoxNTk3NzU5NDY2fQ.hy7jBUJArUu7moZ6OzJuzPWsewyaq3pUI33STJZadLM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5005/mcQuestionService/5f3a859bc5a16c2eacefe604",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5005",
+									"path": [
+										"mcQuestionService",
+										"5f3a859bc5a16c2eacefe604"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change Author",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDA3NzI5MzYsImV4cCI6MTYwMDc4MDEzNn0.odmHtENfJYijbSM8Qr6fMgwxdgUHZk9P31d5V3kT0TM",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"author\": \"lucas@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5005/mcQuestionService/temporary/internal/updateAuthor/5f5f6f8b8cf9d51d9c33f0b3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5005",
+									"path": [
+										"mcQuestionService",
+										"temporary",
+										"internal",
+										"updateAuthor",
+										"5f5f6f8b8cf9d51d9c33f0b3"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Lesson",
+					"item": [
+						{
+							"name": "Get All Lessons",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDYwNjQwNDMsImV4cCI6MTYwNjA3MTI0M30.OAAh7REG60YeMIIFL07Z6RA14Bnju4RQPZX8sbovWRQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "username",
+										"value": "lucas",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "lucas_token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5001/lessonService",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"lessonService"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Lessons Summary",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDc4Nzc0MzUsImV4cCI6MTYwNzg4NDYzNX0.2S75GvylHzxULrBvtR0Tgoe0ClB9M_tY83sUlnYTK4E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "username",
+										"type": "text",
+										"value": "lucas"
+									},
+									{
+										"key": "token",
+										"type": "text",
+										"value": "lucas_token"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5001/lessonService/summary",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"lessonService",
+										"summary"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search lesson",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDYwNjk0ODMsImV4cCI6MTYwNjA3NjY4M30.kZ1bWdebcsY6uyfmWm-4MBAtWDCTyb89_0DC_Ce-wg0",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "username",
+										"type": "text",
+										"value": "lucas"
+									},
+									{
+										"key": "token",
+										"type": "text",
+										"value": "lucas_token"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5001/lessonService/search?dialect=b&term=created",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"lessonService",
+										"search"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "offset",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "dialect",
+											"value": "b"
+										},
+										{
+											"key": "term",
+											"value": "created"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Lesson",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imx1Y2FzIiwiZW1haWwiOiJsdWNhc0BnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MDAxNzUwMTYsImV4cCI6MTYwMDE4MjIxNn0.VYiO6rB_BFaSvfGHRWvhJYQr1nkv2KSCXAekR0L2vjs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "username",
+										"type": "text",
+										"value": "lucas"
+									},
+									{
+										"key": "token",
+										"type": "text",
+										"value": "lucas_token"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5001/lessonService/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"lessonService",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Lesson by ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im9ubHlSZWFkIiwiZW1haWwiOiJvbmx5UmVhZEBnbWFpbC5jb20iLCJyb2xlIjoiUmVhZE9ubHkiLCJpYXQiOjE2MDU0NTgzNTQsImV4cCI6MTYwNTQ2NTU1NH0.B3lesAPX1fpqx0ovea6hHSXRaHWy0Ur050lLa4XP5W4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "username",
+										"value": "lucas",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "lucas_token",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:5001/lessonService/5f64abf057199d277cbab6ab",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"lessonService",
+										"5f64abf057199d277cbab6ab"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Lesson Audio",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "username",
+										"value": "lucasHash",
+										"type": "text"
+									},
+									{
+										"key": "token",
+										"value": "lucasHash_token",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:5001/lessonService/media/audio/5ee8e8e4b1ef7b31704e5cdd",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5001",
+									"path": [
+										"lessonService",
+										"media",
+										"audio",
+										"5ee8e8e4b1ef7b31704e5cdd"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
