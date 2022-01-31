@@ -1,0 +1,118 @@
+version: "3"
+services:
+  mongodb:
+    image: mongo:4.2
+    container_name: mongotak
+    restart: unless-stopped
+    volumes:
+      - /Users/FrankyB/fGrams/Projects/databases/nisodev/mongodb:/data/db
+    ports:
+    - 27017:27017
+
+  author-tool:
+    env_file: .env
+    build:
+      context: .
+      dockerfile: ./author-tool-app/Dockerfile
+    expose:
+      - 80
+    ports:
+      - "8080:80"
+    restart: on-failure
+    container_name: author_tool
+    depends_on:
+      - mongodb
+
+  access-control:
+    build:
+      context: ./microservices
+      dockerfile: ./Access Control/Dockerfile
+    env_file: .env
+    expose:
+      - 5000
+    ports:
+      - "5000:5000"
+    restart: on-failure
+    container_name: accesscontrol_service
+    depends_on:
+      - mongodb
+
+  lessons:
+    build:
+      context: ./microservices
+      dockerfile: ./Lessons/Dockerfile
+    env_file: .env
+    expose:
+      - 5001 
+    ports:
+      - "5001:5001"
+    restart: on-failure
+    container_name: lessons_service
+    volumes:
+      - ./Media:/home/Media
+    depends_on:
+      - mongodb
+
+  multiple-choice:
+    build:
+      context: ./microservices
+      dockerfile: ./Activities/Multiple Choice Question/Dockerfile
+    env_file: .env
+    expose:
+      - 5005
+    ports:
+      - "5005:5005"
+    restart: on-failure
+    container_name: mcquestion_service
+    volumes:
+      - ./Media:/Media
+    depends_on:
+      - mongodb
+
+  content-page:
+    build:
+      context: ./microservices
+      dockerfile: ./Content Pages/Pages/Dockerfile
+    env_file: .env
+    expose:
+      - 5002 
+    ports:
+      - "5002:5002"
+    restart: on-failure
+    container_name: content_page_service
+    volumes:
+      - ./Media:/Media
+    depends_on:
+      - mongodb
+
+  phrase-content:
+    build:
+      context: ./microservices
+      dockerfile: ./Content Pages/Phrases/Dockerfile
+    env_file: .env
+    expose:
+      - 5003
+    ports:
+      - "5003:5003"
+    restart: on-failure
+    container_name: phrase_service
+    volumes:
+      - ./Media:/Media
+    depends_on:
+      - mongodb
+
+  text-content:
+    build:
+      context: ./microservices
+      dockerfile: ./Content Pages/Text/Dockerfile
+    env_file: .env
+    expose:
+      - 5004 
+    ports:
+      - "5004:5004"
+    restart: on-failure
+    container_name: text_service
+    volumes:
+      - ./Media:/Media
+    depends_on:
+      - mongodb
